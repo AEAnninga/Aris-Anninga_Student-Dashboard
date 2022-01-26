@@ -31,10 +31,11 @@
                         }
                     }
                     &-button {
-                        height: 33%;
+                        height: 100%;
                         display: flex;
                         flex-flow: column nowrap;
                         justify-content: flex-end;
+                        justify-self: center;
                     }
                     &-radar {
                         width: 75vw;
