@@ -1,0 +1,51 @@
+@mixin chart-student($width) {
+    .student-content-bar-chart {
+        width: $width;
+    }
+}
+
+@mixin chart-all($width) {
+    .all {
+        section {
+            #chart-all {
+                width: $width;   
+            }
+        }
+    }
+}
+
+@media (min-width: 1920px) {
+    main {
+        @include chart-student(83%);
+    }
+
+}
+
+@media (min-width: 2100px) {
+    main {
+        @include chart-all(88%);
+        @include chart-student(75%);
+    }
+
+}
+
+@media (min-width: 2300px) {
+    main {
+        @include chart-all(78%);
+        @include chart-student(67%); 
+    }
+}
+
+@media (min-width: 2600px) {
+    main {
+        @include chart-all(68%);
+        @include chart-student(58%);
+    }
+}
+
+@media (min-width: 3000px) {
+    main {
+        @include chart-all(60%);
+        @include chart-student(50%);
+    }
+}

@@ -1,0 +1,26 @@
+@media (max-width: 768px) {
+    main {
+        .student {
+            &-content {
+                box-shadow: none;
+                &-info {
+                    &-personal {
+                        img {
+                            margin-left: 0px;
+                        }
+                        &-chart {
+                            margin-right: 0px;
+                        }
+                    }
+                    &-button {
+                        justify-content: center;
+                    }
+                    &-radar {
+                        width: 80%;
+                    }
+                }
+    
+            }
+        }
+    }
+}

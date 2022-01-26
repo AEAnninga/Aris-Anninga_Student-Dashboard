@@ -1,0 +1,44 @@
+nav {
+    display: grid;
+    grid-area: navi;
+    .NavMenu {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center; 
+        box-shadow: $box-shadow-small $purple-theme inset; 
+        div {      
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: 5px;
+            img {
+                box-shadow: $box-shadow-small $blue-theme;
+                width: 75px;
+                border-radius: 75px;
+                @include menu-hover-tab;
+            }
+            .home-icon {
+                width: 75px;
+                border-radius: 75px;
+                background: white;
+                box-shadow: $box-shadow-small $blue-theme;
+                @include menu-hover-tab;
+            }
+        }
+    }
+}
+
+.active-home-tab {
+    img {
+        border: 5px solid $blue-theme; 
+    }  
+}
+
+.active-fun-tab {
+    img {
+        border: 5px solid $purple-theme;
+    }
+}

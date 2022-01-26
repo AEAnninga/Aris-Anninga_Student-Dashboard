@@ -1,0 +1,410 @@
+body {
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas: "head head head title head head head" "navi navi navi navi navi navi navi" "main main main main main main main" "main main main main main main main" "main main main main main main main" "main main main main main main main" "main main main main main main main" "main main main main main main main";
+}
+
+header {
+  display: grid;
+  grid-area: head;
+  background-color: rgba(128, 0, 128, 0.7);
+  box-shadow: 0px 0px 5px;
+}
+header div {
+  grid-area: title;
+}
+header div h1 {
+  color: whitesmoke;
+}
+
+nav {
+  display: grid;
+  grid-area: navi;
+}
+nav .NavMenu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 0px 5px rgba(128, 0, 128, 0.7) inset;
+}
+nav .NavMenu div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 5px;
+}
+nav .NavMenu div img {
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+  width: 75px;
+  border-radius: 75px;
+}
+nav .NavMenu div img:hover {
+  transform: translate(1px, -2px);
+  transition: all 0.2s linear;
+}
+nav .NavMenu div img:not(:hover) {
+  transform: translate(0px, 0px);
+  transition: all 0.2s linear;
+}
+nav .NavMenu div .home-icon {
+  width: 75px;
+  border-radius: 75px;
+  background: white;
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+}
+nav .NavMenu div .home-icon:hover {
+  transform: translate(1px, -2px);
+  transition: all 0.2s linear;
+}
+nav .NavMenu div .home-icon:not(:hover) {
+  transform: translate(0px, 0px);
+  transition: all 0.2s linear;
+}
+
+.active-home-tab img {
+  border: 5px solid rgba(102, 153, 204, 0.7);
+}
+
+.active-fun-tab img {
+  border: 5px solid rgba(128, 0, 128, 0.7);
+}
+
+main {
+  display: grid;
+  grid-area: main;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  padding: 25px;
+}
+main .all {
+  display: grid;
+  grid-area: 1/1/10/17;
+  background: white;
+  -webkit-animation: 1s contentEnter forwards;
+          animation: 1s contentEnter forwards;
+}
+main .all section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+main .all section #chart-all {
+  width: 95%;
+  padding: 25px;
+}
+main .student {
+  display: grid;
+  grid-area: 1/1/10/17;
+  grid-template-columns: repeat(21, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  margin-top: -20px;
+}
+main .student-menu {
+  display: grid;
+  grid-area: 1/1/2/22;
+  -webkit-animation: 0.5s contentEnter forwards;
+          animation: 0.5s contentEnter forwards;
+}
+main .student-menu a {
+  text-decoration: none;
+}
+main .student-menu-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+  padding: 25px;
+}
+main .student-menu-buttons i {
+  font-size: 25px;
+  color: #69c;
+}
+main .student-menu-buttons i:hover {
+  cursor: pointer;
+}
+main .student-menu-buttons button {
+  width: 250px;
+  height: 50px;
+}
+main .student-content {
+  background: white;
+  display: grid;
+  grid-area: 2/1/7/22;
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+  border-radius: 10px;
+}
+main .student-content-info {
+  -webkit-animation: 0.5s contentEnter forwards;
+          animation: 0.5s contentEnter forwards;
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  color: #69c;
+}
+main .student-content-info-personal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+main .student-content-info-personal-chart {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+main .student-content-info-personal-chart img {
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 0px 5px;
+  border-radius: 10px;
+  margin-top: 4px;
+}
+main .student-content-info-personal-chart-pie {
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+  border-radius: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+}
+main .student-content-info-personal-chart-pie #pie {
+  width: 140px;
+  height: 140px;
+}
+main .student-content-info-personal section {
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+  border-radius: 10px;
+  padding: 25px;
+}
+main .student-content-info-button {
+  align-self: center;
+  justify-self: center;
+}
+main .student-content-info-radar {
+  border-radius: 10px;
+  -webkit-animation: 0.5s studentContentEnter forwards;
+          animation: 0.5s studentContentEnter forwards;
+  color: #69c;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  height: 75%;
+}
+main .student-content-info-radar section {
+  margin-bottom: -5px;
+  width: 375px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(102, 153, 204, 0.7);
+}
+main .student-content-bar {
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  -webkit-animation: 0.5s studentContentEnter forwards;
+          animation: 0.5s studentContentEnter forwards;
+  height: 100%;
+  padding-bottom: 25px;
+}
+main .student-content-bar-chart {
+  width: 90%;
+}
+
+@-webkit-keyframes contentEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes contentEnter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#excel-view-home {
+  height: 90vh;
+  width: 90vw;
+}
+
+#excel-view-student {
+  height: 90vh;
+  width: 90vw;
+  padding: 25px;
+}
+
+.ag-theme-material {
+  --ag-header-foreground-color: white;
+  --ag-header-background-color: rgba(128,0,128,0.7);
+  --ag-grid-border-radius: 5px;
+  --ag-header-cell-hover-background-color: rgba(102,153,204);
+  --ag-header-cell-moving-background-color: orange;
+  --ag-full-width-tabs: true;
+  --ag-data-color: #69c;
+  --ag-odd-row-background-color: rgba(102, 153, 204, 0.089);
+  --ag-row-border-color: rgba(102,153,204, 0);
+  --ag-row-hover-color: rgba(102, 153, 204, 0.3);
+  --ag-column-border-color: rgba(102,153,204, 0.7);
+  --ag-range-selection-border-color: rgba(128,0,128,0.7);
+  --ag-range-selection-border-radius: 5px;
+}
+.ag-theme-material .ag-icon-asc {
+  font-weight: bold;
+  color: white;
+}
+.ag-theme-material .ag-icon-desc {
+  font-weight: bold;
+  color: white;
+}
+
+.ag-theme-material .ag-header {
+  border-radius: 5px;
+}
+
+.ag-theme-material .ag-row {
+  border-radius: 5px;
+}
+
+@media (min-width: 1920px) {
+  main .student-content-bar-chart {
+    width: 83%;
+  }
+}
+@media (min-width: 2100px) {
+  main .all section #chart-all {
+    width: 88%;
+  }
+  main .student-content-bar-chart {
+    width: 75%;
+  }
+}
+@media (min-width: 2300px) {
+  main .all section #chart-all {
+    width: 78%;
+  }
+  main .student-content-bar-chart {
+    width: 67%;
+  }
+}
+@media (min-width: 2600px) {
+  main .all section #chart-all {
+    width: 68%;
+  }
+  main .student-content-bar-chart {
+    width: 58%;
+  }
+}
+@media (min-width: 3000px) {
+  main .all section #chart-all {
+    width: 60%;
+  }
+  main .student-content-bar-chart {
+    width: 50%;
+  }
+}
+@media (max-width: 1100px) {
+  main .student {
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  main .student-content {
+    display: grid;
+    grid-area: 2/1/11/22;
+  }
+  main .student-content-info {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  main .student-content-info-personal {
+    align-items: center;
+  }
+  main .student-content-info-personal-chart {
+    justify-content: space-between;
+    width: 90vw;
+  }
+  main .student-content-info-personal-chart-pie {
+    box-sizing: border-box;
+  }
+  main .student-content-info-personal section {
+    margin-top: -155px;
+    height: 130px;
+    padding: 10px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  main .student-content-info-button {
+    height: 33%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+  }
+  main .student-content-info-radar {
+    width: 75vw;
+    padding: 25px;
+  }
+  main .student-content-info-radar section {
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  main .student-menu-buttons {
+    justify-content: center;
+  }
+  main .student-menu-buttons button {
+    width: 150px;
+  }
+  main .student-content-info {
+    align-items: center;
+  }
+  main .student-content-info-personal-chart {
+    justify-content: center;
+  }
+  main .student-content-info-personal section {
+    margin-top: 25px;
+    width: 305px;
+  }
+  main .student-content-info-button {
+    transform: translateY(25px);
+  }
+  main .student-content-info-radar section {
+    width: 250px;
+  }
+}
+@media (max-width: 768px) {
+  main .student-content {
+    box-shadow: none;
+  }
+  main .student-content-info-personal img {
+    margin-left: 0px;
+  }
+  main .student-content-info-personal-chart {
+    margin-right: 0px;
+  }
+  main .student-content-info-button {
+    justify-content: center;
+  }
+  main .student-content-info-radar {
+    width: 80%;
+  }
+}/*# sourceMappingURL=App.css.map */

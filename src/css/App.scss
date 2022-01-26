@@ -1,0 +1,90 @@
+$purple-theme: rgba(128,0,128,0.7);
+$blue-theme: rgba(102,153,204, 0.7);
+$box-shadow-small: 0px 0px 5px;
+
+@mixin menu-hover-tab {
+    &:hover {
+        transform: translate(1px, -2px);
+        transition: all 0.2s linear;
+    }
+    &:not(:hover) {
+        transform: translate(0px, 0px);
+        transition: all 0.2s linear;  
+    }
+}
+
+body {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: 
+        "head head head title head head head"
+        "navi navi navi navi navi navi navi"
+        "main main main main main main main"
+        "main main main main main main main"
+        "main main main main main main main"
+        "main main main main main main main"
+        "main main main main main main main"
+        "main main main main main main main"
+    ;
+}
+
+header {
+    display: grid;
+    grid-area: head;
+    background-color: $purple-theme;
+    box-shadow: $box-shadow-small;
+    div {
+        grid-area: title;
+        h1 {
+            color: whitesmoke;
+        }
+    }
+}
+
+@import './navigation';
+
+main {
+    display: grid;
+    grid-area: main;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    padding: 25px;
+    .all {
+        display: grid;
+        grid-area: 1 / 1 / 10 / 17;
+        background: white;
+        animation: 1s contentEnter forwards;
+        section {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            width: 100%;
+            #chart-all {
+                width: 95%;
+                padding: 25px; 
+            }
+        }
+    }
+    .student {
+        display: grid;
+        grid-area: 1 / 1 / 10 / 17;
+        grid-template-columns: repeat(21, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        margin-top: -20px;
+        @import './student-menu';
+        @import './student-content';   
+    }
+}
+
+@keyframes contentEnter {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@import './excel-view';
+
+@import './breakpoints/wide-screen-breakpoint';
+@import './breakpoints/first-breakpoint';
+@import './breakpoints/second-breakpoint';
+@import './breakpoints/third-breakpoint';
+

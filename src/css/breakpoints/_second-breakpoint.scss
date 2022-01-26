@@ -1,0 +1,36 @@
+@media (max-width: 768px) {
+    main {
+        .student {
+            &-menu {
+                &-buttons {
+                    justify-content: center;
+                    button {
+                      width: 150px;
+                    }
+                }
+            }
+            &-content {
+                &-info {
+                    align-items: center;
+                    &-personal {
+                        &-chart {
+                            justify-content: center;
+                        }
+                        section {
+                            margin-top: 25px;
+                            width: 305px;
+                        }
+                    }
+                    &-button {
+                        transform: translateY(25px);
+                    }
+                    &-radar {
+                        section {
+                            width: 250px; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

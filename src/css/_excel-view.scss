@@ -1,0 +1,44 @@
+#excel-view-home {
+    height: 90vh;
+    width: 90vw;
+}
+
+#excel-view-student {
+    height: 90vh;
+    width: 90vw;
+    padding: 25px;
+}
+
+.ag-theme-material {
+    --ag-header-foreground-color: white;
+    --ag-header-background-color: rgba(128,0,128,0.7);
+    --ag-grid-border-radius: 5px;
+    --ag-header-cell-hover-background-color: rgba(102,153,204);
+    --ag-header-cell-moving-background-color: orange;
+    --ag-full-width-tabs: true;
+    --ag-data-color: #69c;
+    --ag-odd-row-background-color: rgba(102, 153, 204, 0.089);
+    --ag-row-border-color: rgba(102,153,204, 0);
+    --ag-row-hover-color: rgba(102, 153, 204, 0.3);
+    --ag-column-border-color: rgba(102,153,204, 0.7);
+    --ag-range-selection-border-color: rgba(128,0,128,0.7);
+    --ag-range-selection-border-radius: 5px;
+
+    .ag-icon-asc {
+        font-weight: bold;
+        color: white;
+    }
+
+    .ag-icon-desc {
+        font-weight: bold;
+        color: white;
+    }
+}
+
+.ag-theme-material .ag-header {
+  border-radius: 5px;
+}
+
+.ag-theme-material .ag-row {
+    border-radius: 5px;
+}
