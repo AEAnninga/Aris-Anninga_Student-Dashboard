@@ -1,4 +1,5 @@
-export const createBarChartData = (studentData, averages) => {
+export const createBarChartData = (studentData, averages, indexAxis, maintainAspectRatio) => {
+    
     // averages assignments all students
     const averageDifficulties = averages.map(item => item.averageDifficulty);
     const averageFunFactors = averages.map(item => item.averageFunFactor);
@@ -42,6 +43,8 @@ export const createBarChartData = (studentData, averages) => {
             ]
         },
         options: {
+            indexAxis: indexAxis,
+            maintainAspectRatio: maintainAspectRatio,
             plugins: {
                 legend: {
                     onHover: function(event) {

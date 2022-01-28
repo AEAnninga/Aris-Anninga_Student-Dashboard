@@ -3,15 +3,15 @@ import { useSelector } from 'react-redux';
 import { Bar } from 'react-chartjs-2';
 import { createChartAllData } from './chart-all-utils';
 
-const ChartAll = () => {
+const ChartAllHorizontal = () => {
     
     const averages = useSelector(state => state.average.assignments);
-    const chartData = createChartAllData(averages, 'x', true)
+    const chartData = createChartAllData(averages, 'y', false)
     const data = chartData.data;
     const options = chartData.options;
 
     return (
-        <div id='chart-all'>
+        <div id='chart-all-vertical'>
             <Bar 
                 options={options}
                 data={data} 
@@ -20,4 +20,4 @@ const ChartAll = () => {
     );
 };
  
-export default ChartAll;
+export default ChartAllHorizontal;

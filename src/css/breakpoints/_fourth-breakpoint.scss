@@ -1,0 +1,10 @@
+@media (max-width: 500px) {
+    main {
+        .student-menu-buttons {
+            height: 100px;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+        }
+    }
+}

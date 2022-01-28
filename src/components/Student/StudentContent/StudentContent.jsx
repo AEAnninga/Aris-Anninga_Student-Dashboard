@@ -3,14 +3,15 @@ import { Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import StudentInfo from './StudentInfo/StudentInfo';
 import BarChart from './BarChart/BarChart';
+import BarChartHorizontal from './BarChart/BarChartHorizontal'
 import ExcelViewStudent from './ExcelViewStudent/ExcelViewStudent';
 
 const StudentContent = ({ studentData, index, showStudent }) => {
     
-    const excelViewOnWindowResize = useSelector(state => state.excel.view);
-    const showAssignmentsTable = useSelector(state => state.student[index].excelChecked);
-    const showTable = (!excelViewOnWindowResize && showAssignmentsTable) === true;
-    const showBar = (!excelViewOnWindowResize && !showAssignmentsTable) === true;
+    const horizontalBarViewOnWindowResize = useSelector(state => state.horizontalBar.showHorizontalBar);
+    const showTable = useSelector(state => state.student[index].excelChecked);
+    const showBar = (!horizontalBarViewOnWindowResize && !showTable) === true;
+    const showHorizontal = (horizontalBarViewOnWindowResize && !showTable) === true;
 
     return ( 
         <div className='student-content' id='student-data'>
@@ -32,7 +33,7 @@ const StudentContent = ({ studentData, index, showStudent }) => {
                                 studentData={studentData} 
                             />
                         }
-                        {excelViewOnWindowResize && <ExcelViewStudent studentData={studentData}/>}
+                        {showHorizontal && <BarChartHorizontal studentData={studentData}/>}
                         {showTable && <ExcelViewStudent studentData={studentData}/>}
                     </div>
                 </Route>

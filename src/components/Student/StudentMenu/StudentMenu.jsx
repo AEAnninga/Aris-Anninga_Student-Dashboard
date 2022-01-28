@@ -9,6 +9,7 @@ import { studentNavButtonTheme } from '../button-themes';
 import 'font-awesome/css/font-awesome.min.css';
 
 const StudentMenu = ({ studentData, index, showStudent }) => {
+    
     const studentName = studentData.name;
     const isExcel = useSelector(state => state.student[index].excelChecked);
     const windowWidth = useSelector(state => state.window.width);
@@ -48,7 +49,7 @@ const StudentMenu = ({ studentData, index, showStudent }) => {
                         Assignments
                     </Button>
                 </NavLink>
-                {(!showStudent && windowWidth > 1100) &&
+                {!showStudent &&
                     <React.Fragment>
                         {!isExcel && <i id='table-icon' className="fa fa-table" onClick={() => handleTableView(index)}/>}
                         {isExcel &&  <i id='bar-icon' className="fa fa-bar-chart" onClick={() => handleTableView(index)}/>}

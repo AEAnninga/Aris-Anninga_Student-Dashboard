@@ -28,6 +28,46 @@ nav .NavMenu {
   align-items: center;
   box-shadow: 0px 0px 5px rgba(128, 0, 128, 0.7) inset;
 }
+nav .NavMenu .menu-small ul {
+  display: relative;
+  list-style: none;
+  z-index: 1;
+}
+nav .NavMenu .menu-small ul li {
+  width: 100px;
+  text-align: center;
+  transform: translateY(150px);
+  color: whitesmoke;
+  background: #69c;
+  padding: 5px;
+  border-bottom: 1px solid whitesmoke;
+}
+nav .NavMenu .menu-small ul li:hover {
+  transform: translate(2px, 149px);
+  box-shadow: 0px 0px 5px;
+  border: none;
+  background: rgba(128, 0, 128, 0.7);
+  transition: all 0.2s linear;
+}
+nav .NavMenu .menu-small ul li:not(:hover) {
+  transform: translate(0px, 150px);
+  box-shadow: 0px 0px 0px;
+  transition: all 0.2s linear;
+}
+nav .NavMenu .menu-small ul li a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+nav .NavMenu .menu-small ul li:first-child {
+  border-radius: 5px 5px 0px 0px;
+}
+nav .NavMenu .menu-small ul li:nth-child(9) {
+  border-top: none;
+}
+nav .NavMenu .menu-small ul li:last-child {
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+}
 nav .NavMenu div {
   width: 100px;
   height: 100px;
@@ -91,6 +131,7 @@ main .all section {
   flex-flow: row nowrap;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 main .all section #chart-all {
   width: 95%;
@@ -130,7 +171,7 @@ main .student-menu-buttons i:hover {
 }
 main .student-menu-buttons button {
   width: 250px;
-  height: 50px;
+  height: 30px;
 }
 main .student-content {
   box-sizing: border-box;
@@ -320,6 +361,20 @@ main .student-content-bar-chart {
   }
 }
 @media (max-width: 1100px) {
+  main .all {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    height: 2000px;
+  }
+  main .all #chart-all-vertical {
+    width: 90%;
+    height: 100%;
+  }
+  main .all #chart-all-vertical canvas {
+    width: 100%;
+    height: 100%;
+  }
   main .student {
     grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(10, 1fr);
@@ -367,6 +422,20 @@ main .student-content-bar-chart {
   main .student-content-info-radar section {
     width: 300px;
   }
+  main .student-content #student-bar-horizontal {
+    height: 2000px;
+    width: 90%;
+  }
+  main .student-content #student-bar-horizontal canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  #excel-view-student {
+    height: 80vh;
+    width: 80vw;
+    padding: 25px;
+  }
 }
 @media (max-width: 768px) {
   main .student-menu-buttons {
@@ -408,47 +477,53 @@ main .student-content-bar-chart {
   main .student-content-info-radar {
     width: 80%;
   }
-}
-@media (max-height: 600px) {
-  main .student-menu {
-    height: 75px;
+
+  #excel-view-student {
+    height: 90vh;
+    width: 300px;
+    padding: 0px;
   }
+}
+@media (max-width: 500px) {
+  main .student-menu-buttons {
+    height: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+}
+@media (max-height: 600px) and (min-width: 1100px) {
   main .student-menu-buttons {
     padding: 5px;
   }
   main .student-menu-buttons button {
     height: 30px;
   }
+  main .student-content {
+    height: 100%;
+  }
+  main .student-content-info {
+    height: 100vh;
+  }
   main .student-content h1 {
     font-size: 20px;
   }
-  main .student-content section {
-    padding: 5px;
-  }
-  main .student-content-info-personal-chart img {
-    width: 100px;
-    height: 100px;
-  }
-  main .student-content-info-personal-chart-pie {
-    width: 110px;
-    height: 110px;
-  }
-  main .student-content-info-personal-chart-pie #pie {
-    width: 100px;
-    height: 100px;
-  }
-  main .student-content-info-personal-chart section {
-    padding: 5px;
-    height: 75px;
-    margin-top: 0px;
-  }
-  main .student-content-info-personal-chart section pre {
-    font-size: 5px;
-  }
 }
 @media (max-height: 600px) and (min-width: 768px) and (max-width: 1100px) {
+  .student-content {
+    height: 100%;
+  }
   .student-content h1 {
     align-self: flex-start;
     margin-left: 10px;
+  }
+  .student-content-info-button {
+    transform: translateY(25px);
+  }
+  .student-content-info-radar {
+    width: 100%;
+  }
+  .student-content-info-radar section {
+    width: 80%;
   }
 }/*# sourceMappingURL=App.css.map */

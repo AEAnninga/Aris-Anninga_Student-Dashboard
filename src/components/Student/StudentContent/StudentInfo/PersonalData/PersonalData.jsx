@@ -4,7 +4,7 @@ import PieChart from './PieChart/PieChart';
 const PersonalData = ({ studentData, index }) => {
     return ( 
         <div className='student-content-info-personal'>
-            <h1>Student: {studentData.name} {studentData.surname}</h1>
+            <h1>{studentData.name} {studentData.surname}</h1>
             
             <div className='student-content-info-personal-chart'>
                 <div>

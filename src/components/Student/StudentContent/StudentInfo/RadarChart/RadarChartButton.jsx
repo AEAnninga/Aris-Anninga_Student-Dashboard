@@ -18,27 +18,26 @@ const RadarChartButton = ({ index }) => {
   
   return ( 
     <ThemeProvider theme={topFiveButtonTheme}>
-      <div className='student-content-info-button'>
-        {funActive && 
-          <Button 
-            color='difficult' 
-            variant='contained' 
-            onClick={() => handleTopFive(index)} 
-          >
-            Show Top 5 Difficult
-          </Button>
-        }
-        {!funActive && 
-          <Button 
-            color='fun' 
-            variant='contained' 
-            onClick={() => handleTopFive(index)} 
-          >
-            Show Top 5 FunFactor
-          </Button>
-        }
-      </div>   
-      
+    <div className='student-content-info-button'>
+      {funActive && 
+        <Button 
+          color='difficult' 
+          variant='contained' 
+          onClick={() => handleTopFive(index)} 
+        >
+          Show Top 5 Difficult
+        </Button>
+      }
+      {!funActive && 
+        <Button 
+          color='fun' 
+          variant='contained' 
+          onClick={() => handleTopFive(index)} 
+        >
+          Show Top 5 FunFactor
+        </Button>
+      }
+    </div> 
     </ThemeProvider>
   );
 };

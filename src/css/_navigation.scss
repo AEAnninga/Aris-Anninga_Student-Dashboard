@@ -6,7 +6,51 @@ nav {
         flex-flow: row wrap;
         justify-content: space-evenly;
         align-items: center; 
-        box-shadow: $box-shadow-small $purple-theme inset; 
+        box-shadow: $box-shadow-small $purple-theme inset;
+        .menu-small {
+            ul {
+                display: relative;
+                list-style: none;
+                z-index: 1;
+                li {
+                    width: 100px;
+                    text-align: center;
+                    transform:translateY(150px);
+                    color: whitesmoke;
+                    &:hover {
+                        transform: translate(2px, 149px);
+                        box-shadow: 0px 0px 5px;
+                        border: none;
+                        background: $purple-theme;
+                        transition: all 0.2s linear;
+                        
+                    }
+                    &:not(:hover) {
+                        transform: translate(0px, 150px);
+                        box-shadow: 0px 0px 0px;
+                        transition: all 0.2s linear;  
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: whitesmoke;
+                    }
+                    background: #69c;
+                    padding: 5px;
+                    border-bottom: 1px solid whitesmoke;
+                }
+                li:first-child {
+                    border-radius: 5px 5px 0px 0px;
+                }
+                li:nth-child(9) {
+                    border-top: none;
+                }
+                li:last-child {
+                    border-radius: 0px 0px 5px 5px;
+                    cursor: pointer;
+                }
+            }
+        } 
         div {      
             width: 100px;
             height: 100px;

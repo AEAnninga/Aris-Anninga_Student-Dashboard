@@ -1,4 +1,5 @@
-export const createChartAllData = averages => {
+export const createChartAllData = (averages, indexAxis, maintainAspectRatio) => {
+    
     const assignmentNames = averages.map(item => item.name);
     const difficultyAssignments = averages.map(item => item.averageDifficulty);
     const funfactorAssignments = averages.map(item => item.averageFunFactor);
@@ -33,7 +34,8 @@ export const createChartAllData = averages => {
             ]
         },
         options: {
-            indexAxis: 'x',
+            indexAxis: indexAxis,
+            maintainAspectRatio: maintainAspectRatio,
             plugins: {
                 legend: {
                     onHover: function(event) {;

@@ -18,14 +18,12 @@ const NavMenu = () => {
 
   return (
     <React.Fragment>
-      <div className={navClassAll}>
-        <NavLink 
-          to="/" 
-          onClick={() => handleTabStyle('/')}  
-        >
+      <div id='nav-all' className={navClassAll}>
+        <NavLink to="/" onClick={() => handleTabStyle('/')}>
           <img className="home-icon" src={imgUrl} alt='winc-logo'/>
         </NavLink>
       </div>
+
       {studentData.map((item, index) => {
         const showStudent = studentState[index].showStudent;
         const studentPath =  showStudent ? `/${item.name}` : `/${item.name}/assignments`;
@@ -35,7 +33,7 @@ const NavMenu = () => {
         const navClassStudent = (isActive && hasMoreFun) ? 'active-fun-tab' : (isActive ? 'active-home-tab' : null);
        
         return (
-          <div key={index} id={item.id} className={navClassStudent}>    
+          <div key={index} id={item.id} className={navClassStudent}>
             <NavLink 
               key={item.id} 
               to={studentPath}
@@ -44,8 +42,8 @@ const NavMenu = () => {
               <img src={item.photo} alt='person'/>
             </NavLink>
           </div> 
-        )
-      })}
+        )})
+      }
     </React.Fragment>
   );
 };

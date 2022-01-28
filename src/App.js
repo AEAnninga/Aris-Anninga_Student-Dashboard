@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import NavMenu from './components/NavMenu/NavMenu';
+import NavMenuSmall from './components/NavMenu/NavMenuSmall'
 import ChartAll from './components/Home/ChartAll';
-import ExcelView from './components/Home/ExcelView';
+import ChartAllHorizontal from './components/Home/ChartAllHorizontal';
 import Student from './components/Student/Student';
 import { windowActions } from './store/windowSlice';
-import { excelActions } from './store/excelSlice';
+import { horizontalBarActions } from './store/horizontalBarSlice'
 import './css/App.css';
 // import below needed to register every element used from ChartJS (for charts to work)
 import 'chart.js/auto';
@@ -16,7 +17,7 @@ function App() {
   const studentData = useSelector(state => state.data);
   const averages = useSelector(state => state.average.assignments);
   const windowWidth = useSelector(state => state.window.width);
-  const showExcel = useSelector(state => state.excel.view);
+  const showHorizontal = useSelector(state => state.horizontalBar.showHorizontalBar);
   
   const dispatch = useDispatch();
 
@@ -32,15 +33,15 @@ function App() {
     };
   });
 
-  // switch from barchart view to excel view based on window size 
+  // switch to horizontal barchart based on window size 
   useEffect(() => {
     if (windowWidth < 1100) {
-      dispatch(excelActions.setView(true))
+      dispatch(horizontalBarActions.setShowHorizontalBar(true))
     }
     if (windowWidth > 1100) {
-      dispatch(excelActions.setView(false))
+      dispatch(horizontalBarActions.setShowHorizontalBar(false))
     }
-  });
+  }, [windowWidth]);
   
   return (
     <Router>
@@ -53,7 +54,8 @@ function App() {
 
       <nav >
         <div className='NavMenu'>
-          <NavMenu/>
+          {windowWidth > 600 ? <NavMenu/> : <NavMenuSmall />}
+          
         </div>
       </nav>
 
@@ -62,12 +64,12 @@ function App() {
           <Route exact path="/">
               <div className='all' >
                 <section >
-                  {!showExcel &&
-                    <ChartAll 
-                      assignments={averages}
-                    />
+                  {!showHorizontal &&
+                    <ChartAll assignments={averages}/>
                   }
-                  {showExcel && <ExcelView />}
+                  {showHorizontal && 
+                    <ChartAllHorizontal assignments={averages}/>
+                  }
                 </section>
               </div>
           </Route>

@@ -4,6 +4,7 @@ const currentPath = window.location.pathname;
 
 const initialNavState = {
     path: currentPath,
+    showMenu: false,
 };
 
 const navigationSlice = createSlice({
@@ -12,7 +13,10 @@ const navigationSlice = createSlice({
     reducers: {
         setPath(state, action) {
             state.path = action.payload
-        }
+        },
+        toggleMenu(state) {
+            state.showMenu = !state.showMenu
+        },
     }
 });
 

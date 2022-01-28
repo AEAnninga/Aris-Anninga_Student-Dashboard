@@ -9,7 +9,7 @@ const ExcelViewStudent = ({ studentData }) => {
 
     const averages = useSelector(state => state.average.assignments);
     const rowData = createExcelData(studentData, averages);
-
+    
     return (
         <div className="ag-theme-material" id='excel-view-student'>
             <AgGridReact
@@ -18,7 +18,7 @@ const ExcelViewStudent = ({ studentData }) => {
                 <AgGridColumn field="studentDifficulty" sortable={true} resizable={true}></AgGridColumn>
                 <AgGridColumn field="studentFunfactor" sortable={true} resizable={true}></AgGridColumn>
                 <AgGridColumn field="averageDifficulty" sortable={true} resizable={true}></AgGridColumn>
-                <AgGridColumn field="averageFunfactor" sortable={true} resizable={true} ></AgGridColumn>
+                <AgGridColumn field="averageFunfactor" sortable={true} resizable={true}></AgGridColumn>
             </AgGridReact>
         </div>
     );
