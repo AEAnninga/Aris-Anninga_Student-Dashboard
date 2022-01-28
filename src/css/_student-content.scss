@@ -1,90 +1,90 @@
 &-content {
-    box-sizing: border-box;
-    background: white; 
-    display: grid;
-    grid-area: 2 / 1 / 7 / 22;
-    box-shadow: $box-shadow-small $blue-theme;
-    border-radius: 10px;
-    height: 100%;
-    &-info {
-        animation: 0.5s contentEnter forwards;
-        height:600px;
-        width: 100%;
+  box-sizing: border-box;
+  background: white;
+  display: grid;
+  grid-area: 2 / 1 / 7 / 22;
+  box-shadow: $box-shadow-small $blue-theme;
+  border-radius: 10px;
+  height: 100%;
+  &-info {
+    animation: 0.5s contentEnter forwards;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    color: #69c;
+    &-personal {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-evenly;
+      &-chart {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-evenly;
-        color: #69c;
-        &-personal {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-evenly;
-            &-chart {
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-around;
-                align-items: center;
-                column-gap: 25px;
-                img {
-                    width: 150px;
-                    height: 150px;
-                    box-shadow: $box-shadow-small;
-                    border-radius: 10px;
-                    margin-top: 4px;   
-                }
-                &-pie {
-                    box-shadow: $box-shadow-small $blue-theme;
-                    border-radius: 10px; 
-                    padding: 5px;
-                    box-sizing: border-box;
-                    width: 150px;
-                    height: 150px;
-                    #pie {
-                        width: 140px;
-                        height: 140px;
-                    }
-                }
-            }
-            section {
-                box-shadow: $box-shadow-small $blue-theme;
-                border-radius: 10px;
-                padding: 25px;
-            }
+        justify-content: space-around;
+        align-items: center;
+        column-gap: 25px;
+        img {
+          width: 150px;
+          height: 150px;
+          box-shadow: $box-shadow-small;
+          border-radius: 10px;
+          margin-top: 4px;
         }
-        &-button {
-            align-self: center;
-            justify-self: center;
+        &-pie {
+          box-shadow: $box-shadow-small $blue-theme;
+          border-radius: 10px;
+          padding: 5px;
+          box-sizing: border-box;
+          width: 150px;
+          height: 150px;
+          #pie {
+            width: 140px;
+            height: 140px;
+          }
         }
-        &-radar {
-            border-radius: 10px;
-            animation: 0.5s studentContentEnter forwards;
-            color: #69c;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            align-items: center;
-            align-self: center;
-            height: 80%;
-            section {
-                width: 85%;
-                padding: 25px;
-                border-radius: 10px;
-                box-shadow: $box-shadow-small $blue-theme;
-                canvas {
-                    width: 100%;
-                    height: 100%; 
-                }
-            }
-        }
-    }
-    &-bar {
+      }
+      section {
+        box-shadow: $box-shadow-small $blue-theme;
         border-radius: 10px;
-        display: flex;
-        justify-content: center;
-        animation: 0.5s studentContentEnter forwards;
-        height: 100%;
-        padding-bottom: 25px;
-        &-chart {
-            width: 90%;
-        }  
+        padding: 25px;
+      }
     }
-} 
+    &-button {
+      align-self: center;
+      justify-self: center;
+    }
+    &-radar {
+      border-radius: 10px;
+      animation: 0.5s studentContentEnter forwards;
+      color: #69c;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      height: 80%;
+      section {
+        width: 85%;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: $box-shadow-small $blue-theme;
+        canvas {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  &-bar {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    animation: 0.5s studentContentEnter forwards;
+    height: 100%;
+    padding-bottom: 25px;
+    &-chart {
+      width: 90%;
+    }
+  }
+}

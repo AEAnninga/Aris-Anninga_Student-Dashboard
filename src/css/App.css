@@ -185,7 +185,7 @@ main .student-content {
 main .student-content-info {
   -webkit-animation: 0.5s contentEnter forwards;
           animation: 0.5s contentEnter forwards;
-  height: 600px;
+  height: 500px;
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
@@ -298,17 +298,17 @@ main .student-content-bar-chart {
 
 .ag-theme-material {
   --ag-header-foreground-color: white;
-  --ag-header-background-color: rgba(128,0,128,0.7);
+  --ag-header-background-color: rgba(128, 0, 128, 0.7);
   --ag-grid-border-radius: 5px;
-  --ag-header-cell-hover-background-color: rgba(102,153,204);
+  --ag-header-cell-hover-background-color: rgba(102, 153, 204);
   --ag-header-cell-moving-background-color: orange;
   --ag-full-width-tabs: true;
   --ag-data-color: #69c;
   --ag-odd-row-background-color: rgba(102, 153, 204, 0.089);
-  --ag-row-border-color: rgba(102,153,204, 0);
+  --ag-row-border-color: rgba(102, 153, 204, 0);
   --ag-row-hover-color: rgba(102, 153, 204, 0.3);
-  --ag-column-border-color: rgba(102,153,204, 0.7);
-  --ag-range-selection-border-color: rgba(128,0,128,0.7);
+  --ag-column-border-color: rgba(102, 153, 204, 0.7);
+  --ag-range-selection-border-color: rgba(128, 0, 128, 0.7);
   --ag-range-selection-border-radius: 5px;
 }
 .ag-theme-material .ag-icon-asc {
@@ -504,17 +504,11 @@ main .student-content-bar-chart {
   main .student-menu-buttons button {
     height: 30px;
   }
-  main .student-content {
-    height: 100%;
-  }
-  main .student-content-info {
-    height: 100vh;
-  }
   main .student-content h1 {
     font-size: 20px;
   }
 }
-@media (max-height: 600px) and (min-width: 768px) and (max-width: 1100px) {
+@media (max-height: 768px) and (min-width: 768px) and (max-width: 1100px) {
   .student-content {
     height: 100%;
   }
