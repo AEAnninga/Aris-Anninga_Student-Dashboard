@@ -41,7 +41,7 @@ function App() {
     if (windowWidth > 1100) {
       dispatch(horizontalBarActions.setShowHorizontalBar(false))
     }
-  }, [windowWidth]);
+  }, [windowWidth, dispatch]);
   
   return (
     <Router>

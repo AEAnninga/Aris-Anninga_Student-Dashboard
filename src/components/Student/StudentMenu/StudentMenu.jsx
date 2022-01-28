@@ -12,7 +12,6 @@ const StudentMenu = ({ studentData, index, showStudent }) => {
     
     const studentName = studentData.name;
     const isExcel = useSelector(state => state.student[index].excelChecked);
-    const windowWidth = useSelector(state => state.window.width);
     
     const dispatch = useDispatch();
 
