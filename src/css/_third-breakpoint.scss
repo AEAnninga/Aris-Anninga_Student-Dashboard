@@ -1,0 +1,58 @@
+@media (max-width: 500px) {
+  header {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  main {
+    .student {
+      &-menu {
+        display: flex;
+        flex-flow: column nowrap;
+        &-buttons {
+          height: 100px;
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: space-between;
+        }
+      }
+      &-content-info {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        height: 500px;
+        h1 {
+          font-size: 16px;
+        }
+        &-personal {
+          &-chart {
+            img {
+              width: 100px;
+              height: 100px;
+            }
+            &-pie {
+              width: 100px;
+              height: 100px;
+              #pie {
+                width: 95px;
+                height: 90px;
+              }
+            }
+          }
+          section {
+            width: 225px;
+            pre {
+              font-size: 10px;
+            }
+          }
+        }
+        &-radar {
+          height: 80%;
+          section {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+}

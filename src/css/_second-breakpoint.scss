@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+  header {
+    h1 {
+      font-size: 20px;
+    }
+  }
+  main {
+    .student {
+      &-menu {
+        &-buttons {
+          justify-content: center;
+          height: 100px;
+          button {
+            width: 150px;
+          }
+        }
+      }
+      &-content {
+        box-shadow: none;
+        &-info {
+          align-items: center;
+          justify-content: center;
+          width: 97%;
+          height: 65%;
+          &-personal {
+            height: 300px;
+            img {
+              margin-left: 0px;
+            }
+            &-chart {
+              justify-content: center;
+              margin-right: 0px;
+            }
+            section {
+              margin-top: 25px;
+              width: 305px;
+            }
+          }
+          &-button {
+            justify-content: center;
+            transform: translateY(35px);
+            height: 100px;
+          }
+          &-radar {
+            height: 300px;
+            section {
+              width: 250px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #excel-view-student {
+    height: 90vh;
+    width: 300px;
+    padding: 0px;
+  }
+}
