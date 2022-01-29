@@ -50,8 +50,12 @@ const StudentMenu = ({ studentData, index, showStudent }) => {
                 </NavLink>
                 {!showStudent &&
                     <React.Fragment>
-                        {!isExcel && <i id='table-icon' className="fa fa-table" onClick={() => handleTableView(index)}/>}
-                        {isExcel &&  <i id='bar-icon' className="fa fa-bar-chart" onClick={() => handleTableView(index)}/>}
+                        {!isExcel && 
+                            <i id='table-icon' className="fa fa-table" onClick={() => handleTableView(index)}/>
+                        }
+                        {isExcel &&  
+                            <i id='bar-icon' className="fa fa-bar-chart" onClick={() => handleTableView(index)}/>
+                        }
                     </React.Fragment>
                 }
             </div>   

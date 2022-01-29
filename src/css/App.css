@@ -444,44 +444,50 @@ main .student-content-bar-chart {
   }
 }
 @media (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+  }
+
   main .student-menu-buttons {
     justify-content: center;
+    height: 100px;
   }
   main .student-menu-buttons button {
     width: 150px;
   }
+  main .student-content {
+    box-shadow: none;
+  }
   main .student-content-info {
     align-items: center;
+    justify-content: center;
+    width: 97%;
+    height: 65%;
+  }
+  main .student-content-info-personal {
+    height: 300px;
+  }
+  main .student-content-info-personal img {
+    margin-left: 0px;
   }
   main .student-content-info-personal-chart {
     justify-content: center;
+    margin-right: 0px;
   }
   main .student-content-info-personal section {
     margin-top: 25px;
     width: 305px;
   }
   main .student-content-info-button {
-    transform: translateY(25px);
+    justify-content: center;
+    transform: translateY(35px);
+    height: 100px;
+  }
+  main .student-content-info-radar {
+    height: 300px;
   }
   main .student-content-info-radar section {
     width: 250px;
-  }
-}
-@media (max-width: 768px) {
-  main .student-content {
-    box-shadow: none;
-  }
-  main .student-content-info-personal img {
-    margin-left: 0px;
-  }
-  main .student-content-info-personal-chart {
-    margin-right: 0px;
-  }
-  main .student-content-info-button {
-    justify-content: center;
-  }
-  main .student-content-info-radar {
-    width: 80%;
   }
 
   #excel-view-student {
@@ -491,10 +497,53 @@ main .student-content-bar-chart {
   }
 }
 @media (max-width: 500px) {
-  main .student {
+  header h1 {
+    font-size: 20px;
+  }
+
+  main .student-menu {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  main .student-menu-buttons {
+    height: 100px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+  }
+  main .student-content-info {
+    transform: translateX(-20px);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    height: 500px;
+  }
+  main .student-content-info h1 {
+    font-size: 16px;
+  }
+  main .student-content-info-personal-chart img {
+    width: 100px;
+    height: 100px;
+  }
+  main .student-content-info-personal-chart-pie {
+    width: 100px;
+    height: 100px;
+  }
+  main .student-content-info-personal-chart-pie #pie {
+    width: 95px;
+    height: 90px;
+  }
+  main .student-content-info-personal section {
+    width: 225px;
+  }
+  main .student-content-info-personal section pre {
+    font-size: 10px;
+  }
+  main .student-content-info-radar {
+    height: 80%;
+  }
+  main .student-content-info-radar section {
+    width: 80%;
   }
 }
 @media (max-height: 768px) and (min-width: 1100px) {
@@ -509,6 +558,12 @@ main .student-content-bar-chart {
   }
 }
 @media (max-height: 768px) and (min-width: 768px) and (max-width: 1100px) {
+  .student-menu-buttons {
+    padding: 5px;
+  }
+  .student-menu-buttons button {
+    height: 30px;
+  }
   .student-content {
     height: 100%;
   }
